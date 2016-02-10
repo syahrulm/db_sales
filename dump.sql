@@ -643,7 +643,7 @@ UNLOCK TABLES;
 /*!50001 SET character_set_results     = utf8 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`10.0.2.2` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `activity_pricing_view` AS select `pp`.`pricing_id` AS `pricing_id`,`ps`.`package_scheme_id` AS `package_scheme_id`,`ps`.`package_scheme_name` AS `package_scheme_name`,`pkg`.`package_name` AS `package_name`,`pt`.`package_type_name` AS `package_type_name`,`pp`.`start_time` AS `start_time`,`pp`.`end_time` AS `end_time`,`pp`.`base_price` AS `base_price`,`pp`.`sales_price` AS `sales_price`,`pp`.`supplier_id` AS `supplier_id`,`pp`.`minimum_participant` AS `minimum_participant`,`pp`.`maximum_participant` AS `maximum_participant`,`pp`.`itenerary_collection_id` AS `itenerary_collection_id`,`pp`.`description` AS `description`,`pp`.`valid_date_from` AS `valid_date_from`,`pp`.`valid_date_to` AS `valid_date_to`,`pp`.`number_days` AS `number_days`,`pp`.`number_night` AS `number_night`,`spd`.`special_base_price` AS `special_base_price`,`spd`.`special_sales_prize` AS `special_sales_prize`,`spd`.`special_date` AS `special_date` from ((((`package_scheme` `ps` left join `package` `pkg` on((`ps`.`package_id` = `pkg`.`package_id`))) left join `package_type` `pt` on((`pkg`.`package_type_id` = `pt`.`package_type_id`))) left join `package_pricing` `pp` on((`ps`.`package_scheme_id` = `pp`.`package_scheme_id`))) left join `special_price_date` `spd` on((`pp`.`pricing_id` = `spd`.`pricing_id`))) where (`pt`.`package_type_name` = 'activity') */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -661,7 +661,7 @@ UNLOCK TABLES;
 /*!50001 SET character_set_results     = utf8 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`10.0.2.2` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `hotel_view` AS select `hr`.`number_room` AS `number_room`,`hrt`.`room_type_id` AS `room_type_id`,`hr`.`room_id` AS `room_id`,`hrt`.`room_type` AS `room_type`,`ht`.`star_rating` AS `star_rating`,`tp`.`place_name` AS `place_name`,`tp`.`address` AS `address`,`tp`.`city_id` AS `city_id`,`ct`.`city_name` AS `city_name`,`ct`.`timezone` AS `timezone`,`ct`.`alias` AS `alias`,`ct`.`country_id` AS `country_id`,`cnt`.`country_name` AS `country_name` from (((((`hotel_room` `hr` left join `hotel_room_type` `hrt` on((`hr`.`room_type_id` = `hrt`.`room_type_id`))) left join `hotel` `ht` on((`hr`.`tourism_place_id` = `ht`.`tourism_place_id`))) left join `tourism_place` `tp` on((`ht`.`tourism_place_id` = `tp`.`tourism_place_id`))) left join `city` `ct` on((`tp`.`city_id` = `ct`.`city_id`))) left join `country` `cnt` on((`ct`.`country_id` = `cnt`.`country_id`))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -679,7 +679,7 @@ UNLOCK TABLES;
 /*!50001 SET character_set_results     = utf8 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`10.0.2.2` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `itenerary_view` AS select `itd`.`itenerary_id` AS `itenerary_id`,`itc`.`itenerary_collection_id` AS `itenerary_collection_id`,`itd`.`sequence` AS `sequence`,`itd`.`day` AS `day`,`itn`.`itenerary_name` AS `itenerary_name`,`itn`.`description` AS `description`,`itd`.`tourism_place_id` AS `tourism_place_id`,`tpl`.`place_name` AS `place_name`,`tpl`.`city_id` AS `city_id`,`ct`.`city_name` AS `city_name`,`ct`.`alias` AS `alias`,`ct`.`timezone` AS `timezone`,`ct`.`country_id` AS `country_id`,`cnt`.`country_name` AS `country_name` from (((((`itenerary_detail` `itd` left join `itenerary` `itn` on((`itd`.`itenerary_id` = `itn`.`itenerary_id`))) left join `itenerary_collection` `itc` on((`itd`.`itenerary_collection_id` = `itc`.`itenerary_collection_id`))) left join `tourism_place` `tpl` on((`itd`.`tourism_place_id` = `tpl`.`tourism_place_id`))) left join `city` `ct` on((`tpl`.`city_id` = `ct`.`city_id`))) left join `country` `cnt` on((`ct`.`country_id` = `cnt`.`country_id`))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -697,7 +697,7 @@ UNLOCK TABLES;
 /*!50001 SET character_set_results     = utf8 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`10.0.2.2` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`root`@`localhostlocalhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `tour_pricing_view` AS select `pp`.`pricing_id` AS `pricing_id`,`pp`.`start_time` AS `start_time`,`pp`.`end_time` AS `end_time`,`pp`.`base_price` AS `base_price`,`pp`.`sales_price` AS `sales_price`,`pp`.`supplier_id` AS `supplier_id`,`pp`.`minimum_participant` AS `minimum_participant`,`pp`.`maximum_participant` AS `maximum_participant`,`pp`.`itenerary_collection_id` AS `itenerary_collection_id`,`pp`.`description` AS `description`,`pp`.`valid_date_from` AS `valid_date_from`,`pp`.`valid_date_to` AS `valid_date_to`,`pp`.`number_days` AS `number_days`,`pp`.`number_night` AS `number_night`,`ps`.`package_scheme_name` AS `package_scheme_name`,`ps`.`package_id` AS `package_id`,`pkg`.`package_name` AS `package_name`,`pkg`.`package_type_id` AS `package_type_id`,`pty`.`package_type_name` AS `package_type_name`,`hv`.`star_rating` AS `star_rating`,`hv`.`place_name` AS `place_name`,`hv`.`address` AS `address`,`hv`.`city_name` AS `city_name`,`hv`.`country_name` AS `country_name`,`hv`.`room_type` AS `room_type`,`htd`.`start_date` AS `start_date_room`,`htd`.`end_date` AS `end_date_room`,`spd`.`special_base_price` AS `special_base_price`,`spd`.`special_sales_prize` AS `special_sales_prize`,`spd`.`special_date` AS `special_date` from ((((((`hotel_stay_detail` `htd` left join `hotel_view` `hv` on((`htd`.`room_id` = `hv`.`room_id`))) left join `package_scheme` `ps` on((`htd`.`package_scheme_id` = `ps`.`package_scheme_id`))) left join `package` `pkg` on((`ps`.`package_id` = `pkg`.`package_id`))) left join `package_type` `pty` on((`pkg`.`package_type_id` = `pty`.`package_type_id`))) left join `package_pricing` `pp` on((`ps`.`package_scheme_id` = `pp`.`package_scheme_id`))) left join `special_price_date` `spd` on((`pp`.`pricing_id` = `spd`.`pricing_id`))) where (`pty`.`package_type_name` = 'tour') */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
